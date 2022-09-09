@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographersLittleHelper.Core", "PhotographersLittleHelper.Core\PhotographersLittleHelper.Core.csproj", "{7D056F05-4019-469A-B06A-724073554839}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotographersLittleHelper.Core", "PhotographersLittleHelper.Core\PhotographersLittleHelper.Core.csproj", "{7D056F05-4019-469A-B06A-724073554839}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographersLittleHelper.Core.Test", "PhotographersLittleHelper.Core.Test\PhotographersLittleHelper.Core.Test.csproj", "{14BD30D2-F163-4DB4-9EE8-1FE6B5FC2E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotographersLittleHelper.Core.Test", "PhotographersLittleHelper.Core.Test\PhotographersLittleHelper.Core.Test.csproj", "{14BD30D2-F163-4DB4-9EE8-1FE6B5FC2E55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographersLittleHelper.App", "PhotographersLittleHelper.App\PhotographersLittleHelper.App.csproj", "{FA42095F-84E5-4BB0-A4AE-46754808C30F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{14BD30D2-F163-4DB4-9EE8-1FE6B5FC2E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14BD30D2-F163-4DB4-9EE8-1FE6B5FC2E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14BD30D2-F163-4DB4-9EE8-1FE6B5FC2E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA42095F-84E5-4BB0-A4AE-46754808C30F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA42095F-84E5-4BB0-A4AE-46754808C30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA42095F-84E5-4BB0-A4AE-46754808C30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA42095F-84E5-4BB0-A4AE-46754808C30F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
