@@ -11,6 +11,8 @@ namespace PhotographersLittleHelper.Core.Pipe
     {
         public byte[] Data { get; set; }
 
+        public string Filename { get; set; }
+
         public ImageFormat Format { get; set; }
 
         public PhotoData() { }

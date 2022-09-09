@@ -8,17 +8,23 @@ namespace PhotographersLittleHelper.Core.Pipe
 {
     public abstract class Step<I, O> : IStep<I, O>
     {
-        public IStepIn<O>? NextStep { get; set; }
+        public IStepIn<O> NextStep { get; set; }
 
         public Step() { }
 
-        public bool Work(I input)
+        public async Task<bool> WorkAsync(I input)
         {
-            O output = WorkInternal(input);
+            O output = await WorkInternalAsync(input).ConfigureAwait(false);
 
-            return NextStep?.Work(output) ?? false;
+            if (NextStep != null)
+            {
+                return await NextStep.WorkAsync(output).ConfigureAwait(false);
+            } else
+            {
+                return true;
+            }
         }
 
-        protected abstract O WorkInternal(I input);
+        protected abstract Task<O> WorkInternalAsync(I input);
     }
 }

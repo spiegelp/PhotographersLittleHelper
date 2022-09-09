@@ -8,5 +8,8 @@ namespace PhotographersLittleHelper.Core.Pipe
 {
     public interface ISource<T> : IStepOut<T>
     {
+        IStepIn<T> NextStep { get; set; }
+
+        Task WorkAsync();
     }
 }

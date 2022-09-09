@@ -8,6 +8,6 @@ namespace PhotographersLittleHelper.Core.Pipe
 {
     public interface IStep<I, O> : IStepIn<I>, IStepOut<O>
     {
-        IStepIn<O>? NextStep { get; set; }
+        IStepIn<O> NextStep { get; set; }
     }
 }

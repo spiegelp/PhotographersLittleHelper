@@ -10,14 +10,26 @@ namespace PhotographersLittleHelper.Core.Services
 {
     public class PhotoService
     {
-        public PhotoService() { }
+        public ISet<ImageFormat> SupportedImageFormats { get; init; }
+
+        public PhotoService()
+        {
+            SupportedImageFormats = new HashSet<ImageFormat>
+            {
+                ImageFormat.Jpeg,
+                ImageFormat.Png,
+                ImageFormat.Gif
+            };
+        }
 
         public async Task<PhotoData> ReadPhotoAsync(string filename)
         {
+            FileInfo file = new(filename);
+
             ImageFormat format = GetImageFormatForFilename(filename);
             byte[] data = await File.ReadAllBytesAsync(filename).ConfigureAwait(false);
 
-            return new() { Data = data, Format = format };
+            return new() { Data = data, Filename = file.Name, Format = format };
         }
 
         public ImageFormat GetImageFormatForFilename(string filename)

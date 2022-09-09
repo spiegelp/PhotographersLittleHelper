@@ -19,7 +19,8 @@ namespace PhotographersLittleHelper.Core.Pipe
             Quality = 90;
         }
 
-        protected override PhotoData WorkInternal(PhotoData input)
+#pragma warning disable CS1998 // disable warning that async method does not await anything
+        protected override async Task<PhotoData> WorkInternalAsync(PhotoData input)
         {
             using MemoryStream msInput = new(input.Data);
             Bitmap image = new(msInput);
@@ -35,5 +36,6 @@ namespace PhotographersLittleHelper.Core.Pipe
 
             return new() { Data = msOutput.ToArray(), Format = input.Format };
         }
+#pragma warning restore CS1998
     }
 }

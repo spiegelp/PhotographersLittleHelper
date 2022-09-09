@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace PhotographersLittleHelper.Core.Pipe
 {
-    public interface IStepIn<T>
+    public abstract class Source<T> : ISource<T>
     {
-        Task<bool> WorkAsync(T input);
+        public IStepIn<T> NextStep { get; set; }
+
+        public abstract Task WorkAsync();
     }
 }
