@@ -41,6 +41,8 @@
                 </ResourceDictionary>
 
                 <!-- data templates -->
+                <ResourceDictionary Source="pack://application:,,,/GuiLayer/Resources/ViewModelDataTemplates.xaml" />
+                
                 <ResourceDictionary>
                     <Style TargetType="ScrollViewer" BasedOn="{StaticResource MaterialDesignScrollViewer}">
                         <Setter Property="md:ScrollViewerAssist.IgnorePadding" Value="False" />

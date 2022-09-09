@@ -34,7 +34,7 @@ namespace PhotographersLittleHelper.Core.Pipe
             using MemoryStream msOutput = new();
             image.Save(msOutput, imageCodec, encoderParams);
 
-            return new() { Data = msOutput.ToArray(), Format = input.Format };
+            return new() { Data = msOutput.ToArray(), Filename = input.Filename, Format = input.Format };
         }
 #pragma warning restore CS1998
     }

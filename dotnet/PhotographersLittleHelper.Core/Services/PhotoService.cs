@@ -45,5 +45,23 @@ namespace PhotographersLittleHelper.Core.Services
                 _ => throw new ArgumentException($"Extension of {file.Name} is not supported.", nameof(filename)),
             };
         }
+
+        public async Task CompressPhotosAsync(string sourceDirectory, string sinkDirectory, int quality)
+        {
+            await Task.Run(async () =>
+            {
+                if (!string.IsNullOrWhiteSpace(sourceDirectory) && new DirectoryInfo(sourceDirectory).Exists
+                    && !string.IsNullOrWhiteSpace(sinkDirectory) && new DirectoryInfo(sinkDirectory).Exists
+                    && quality >= 1 && quality <= 100)
+                {
+                    DirectorySink sink = new() { Directory = sinkDirectory };
+                    PhotoCompressionStep compressionStep = new() { Quality = quality, NextStep = sink };
+                    DirectorySource source = new() { Directory = sourceDirectory, NextStep = compressionStep };
+
+                    await Task.Run(async () => await source.WorkAsync().ConfigureAwait(false))
+                        .ConfigureAwait(false);
+                }
+            }).ConfigureAwait(false);
+        }
     }
 }

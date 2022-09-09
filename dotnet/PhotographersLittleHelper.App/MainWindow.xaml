@@ -3,15 +3,20 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:mde="https://spiegelp.github.io/MaterialDesignExtensions/winfx/xaml"
                     xmlns:local="clr-namespace:PhotographersLittleHelper.App.GuiLayer"
                     mc:Ignorable="d"
-                    Title="Photographer's Little Helper" Height="450" Width="800">
+                    Title="Photographer's Little Helper" Height="500" Width="700">
     <Grid>
-        <mde:TransitionContentControl x:Name="m_contentControl" Panel.ZIndex="1" TransitionType="FadeInAndGrow"
-                                      Content="{Binding Path=CurrentViewModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-        <mde:BusyOverlay x:Name="m_busyOverlay" IsBusy="{Binding Path=CurrentViewModel.IsBusy}"
-                         Panel.ZIndex="99" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <md:DialogHost Identifier="mainWindowDialogHost">
+            <Grid>
+                <mde:TransitionContentControl x:Name="m_contentControl" Panel.ZIndex="1" TransitionType="FadeInAndGrow"
+                                              Content="{Binding Path=CurrentViewModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                <mde:BusyOverlay x:Name="m_busyOverlay" IsBusy="{Binding Path=CurrentViewModel.IsBusy}"
+                                 Panel.ZIndex="99" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            </Grid>
+        </md:DialogHost>
     </Grid>
 </mde:MaterialWindow>
