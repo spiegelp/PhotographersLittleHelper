@@ -41,7 +41,7 @@ namespace PhotographersLittleHelper.Core.Pipe
         protected override async Task<PhotoData> WorkInternalAsync(PhotoData input)
         {
             using MemoryStream msInput = new(input.Data);
-            Bitmap image = new(msInput);
+            using Bitmap image = new(msInput);
 
             System.Drawing.Imaging.Encoder encoder = System.Drawing.Imaging.Encoder.Quality;
             EncoderParameters encoderParams = new(1);

@@ -81,7 +81,7 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
 #if DEBUG
             m_source.Directory = @"C:\temp\photos\in";
             m_sink.Directory = @"C:\temp\photos\out";
-            m_steps.Add(new PhotoCompressionStep());
+            //m_steps.Add(new PhotoCompressionStep());
 #endif
         }
 
@@ -121,6 +121,11 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
         {
             action();
         }
+
+        public Action AddResizingStep => () =>
+        {
+            m_steps.Add(new PhotoResizingStep());
+        };
 
         public Action AddCompressionStep => () =>
         {

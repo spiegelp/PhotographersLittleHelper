@@ -32,7 +32,11 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                    <WrapPanel Orientation="Vertical" HorizontalAlignment="Right">
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="4" Cursor="Hand" Margin="0,16,0,0"
+                                Command="{Binding AddStepCommand}" CommandParameter="{Binding Path=AddResizingStep}">
+                            <md:PackIcon Kind="Resize" Height="24" Width="24" />
+                        </Button>
                         <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="4" Cursor="Hand" Margin="0,16,0,0"
                                 Command="{Binding AddStepCommand}" CommandParameter="{Binding Path=AddCompressionStep}">
                             <md:PackIcon Kind="CompressedFileOutline" Height="24" Width="24" />
