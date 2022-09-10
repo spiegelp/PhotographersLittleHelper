@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NuniToolbox.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PhotographersLittleHelper.Core.Pipe
 {
-    public abstract class Step<I, O> : IStep<I, O>
+    public abstract class Step<I, O> : ModelObject, IStep<I, O>
     {
         public IStepIn<O> NextStep { get; set; }
 

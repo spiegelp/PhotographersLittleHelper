@@ -42,6 +42,7 @@
 
                 <!-- data templates -->
                 <ResourceDictionary Source="pack://application:,,,/GuiLayer/Resources/ViewModelDataTemplates.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GuiLayer/Resources/PipeDataTemplates.xaml" />
                 
                 <ResourceDictionary>
                     <Style TargetType="ScrollViewer" BasedOn="{StaticResource MaterialDesignScrollViewer}">

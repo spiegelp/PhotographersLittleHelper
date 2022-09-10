@@ -1,5 +1,6 @@
 ﻿using MaterialDesignExtensions.Controls;
 using NuniToolbox.Ui.Commands;
+using PhotographersLittleHelper.Core.Pipe;
 using PhotographersLittleHelper.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
 
         public ICommand CompressCommand { get; init; }
 
-        public int MaxQuality => 100;
+        public int MaxQuality => PhotoCompressionStep.MinQuality;
 
-        public int MinQuality => 1;
+        public int MinQuality => PhotoCompressionStep.MaxQuality;
 
         public int Quality
         {

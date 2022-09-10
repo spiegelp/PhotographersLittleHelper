@@ -52,7 +52,7 @@ namespace PhotographersLittleHelper.Core.Services
             {
                 if (!string.IsNullOrWhiteSpace(sourceDirectory) && new DirectoryInfo(sourceDirectory).Exists
                     && !string.IsNullOrWhiteSpace(sinkDirectory) && new DirectoryInfo(sinkDirectory).Exists
-                    && quality >= 1 && quality <= 100)
+                    && quality >= PhotoCompressionStep.MinQuality && quality <= PhotoCompressionStep.MaxQuality)
                 {
                     DirectorySink sink = new() { Directory = sinkDirectory };
                     PhotoCompressionStep compressionStep = new() { Quality = quality, NextStep = sink };

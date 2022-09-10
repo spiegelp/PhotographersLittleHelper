@@ -11,7 +11,25 @@ namespace PhotographersLittleHelper.Core.Pipe
 {
     public class PhotoCompressionStep : Step<PhotoData, PhotoData>
     {
-        public int Quality { get; set; }
+        public const int MinQuality = 1;
+        public const int MaxQuality = 100;
+
+        private int m_quality;
+
+        public int Quality
+        {
+            get
+            {
+                return m_quality;
+            }
+
+            set
+            {
+                m_quality = value;
+
+                OnPropertyChanged();
+            }
+        }
 
         public PhotoCompressionStep()
             : base()

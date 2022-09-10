@@ -3,6 +3,10 @@
                     xmlns:controls="clr-namespace:PhotographersLittleHelper.App.GuiLayer.Controls"
                     xmlns:viewModel="clr-namespace:PhotographersLittleHelper.App.GuiLayer.ViewModel">
 
+    <DataTemplate DataType="{x:Type viewModel:BuildPipeViewModel}">
+        <controls:BuildPipeControl />
+    </DataTemplate>
+    
     <DataTemplate DataType="{x:Type viewModel:CompressPhotosViewModel}">
         <controls:CompressPhotosControl />
     </DataTemplate>

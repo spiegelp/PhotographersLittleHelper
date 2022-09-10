@@ -6,7 +6,7 @@
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:PhotographersLittleHelper.App.GuiLayer.Controls"
              mc:Ignorable="d" 
-             Background="{StaticResource MaterialDesignBackground}"
+             Background="{DynamicResource MaterialDesignBackground}"
              d:DesignHeight="500" d:DesignWidth="700">
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"

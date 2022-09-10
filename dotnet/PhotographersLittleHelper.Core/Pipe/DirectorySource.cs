@@ -9,7 +9,22 @@ namespace PhotographersLittleHelper.Core.Pipe
 {
     public class DirectorySource : Source<PhotoData>
     {
-        public string Directory { get; set; }
+        private string m_directoy;
+
+        public string Directory
+        {
+            get
+            {
+                return m_directoy;
+            }
+
+            set
+            {
+                m_directoy = value;
+
+                OnPropertyChanged();
+            }
+        }
 
         public PhotoService PhotoService { get; init; }
 

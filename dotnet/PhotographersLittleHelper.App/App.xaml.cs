@@ -21,7 +21,9 @@ namespace PhotographersLittleHelper.App
             FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
 
             WindowViewModel windowViewModel = new();
-            CompressPhotosViewModel viewModel = new(windowViewModel);
+            /*CompressPhotosViewModel viewModel = new(windowViewModel);
+            windowViewModel.CurrentViewModel = viewModel;*/
+            BuildPipeViewModel viewModel = new(windowViewModel);
             windowViewModel.CurrentViewModel = viewModel;
             MainWindow mainWindow = new(windowViewModel);
 

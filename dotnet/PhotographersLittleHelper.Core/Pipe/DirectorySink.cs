@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NuniToolbox.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,24 @@ using System.Threading.Tasks;
 
 namespace PhotographersLittleHelper.Core.Pipe
 {
-    public class DirectorySink : ISink<PhotoData>
+    public class DirectorySink : ModelObject, ISink<PhotoData>
     {
-        public string Directory { get; set; }
+        private string m_directoy;
+
+        public string Directory
+        {
+            get
+            {
+                return m_directoy;
+            }
+
+            set
+            {
+                m_directoy = value;
+
+                OnPropertyChanged();
+            }
+        }
 
         public DirectorySink() { }
 
