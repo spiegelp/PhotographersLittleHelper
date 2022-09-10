@@ -87,4 +87,12 @@
         </Border>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type pipe:GrayscaleStep}">
+        <Border BorderThickness="1" CornerRadius="4"
+                Background="{DynamicResource MaterialDesignBackground}" BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                Padding="16" SnapsToDevicePixels="True">
+            <TextBlock Text="Grayscale" FontSize="18" />
+        </Border>
+    </DataTemplate>
+
 </ResourceDictionary>

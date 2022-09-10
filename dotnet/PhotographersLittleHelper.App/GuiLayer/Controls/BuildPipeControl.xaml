@@ -33,13 +33,20 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="4" Cursor="Hand" Margin="0,16,0,0"
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Resize"
+                                Padding="4" Cursor="Hand" Margin="0,16,0,0"
                                 Command="{Binding AddStepCommand}" CommandParameter="{Binding Path=AddResizingStep}">
                             <md:PackIcon Kind="Resize" Height="24" Width="24" />
                         </Button>
-                        <Button Style="{StaticResource MaterialDesignFlatButton}" Padding="4" Cursor="Hand" Margin="0,16,0,0"
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Compress"
+                                Padding="4" Cursor="Hand" Margin="0,16,0,0"
                                 Command="{Binding AddStepCommand}" CommandParameter="{Binding Path=AddCompressionStep}">
                             <md:PackIcon Kind="CompressedFileOutline" Height="24" Width="24" />
+                        </Button>
+                        <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Grayscale"
+                                Padding="4" Cursor="Hand" Margin="0,16,0,0"
+                                Command="{Binding AddStepCommand}" CommandParameter="{Binding Path=AddGrayscaleStep}">
+                            <md:PackIcon Kind="InvertColors" Height="24" Width="24" />
                         </Button>
                     </WrapPanel>
                     <ContentControl Content="{Binding Path=Sink}" Margin="0,16,0,0" />

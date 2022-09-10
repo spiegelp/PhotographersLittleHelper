@@ -132,6 +132,11 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
             m_steps.Add(new PhotoCompressionStep());
         };
 
+        public Action AddGrayscaleStep => () =>
+        {
+            m_steps.Add(new GrayscaleStep());
+        };
+
         private async void RunPipeHandler()
         {
             IsBusy = true;
