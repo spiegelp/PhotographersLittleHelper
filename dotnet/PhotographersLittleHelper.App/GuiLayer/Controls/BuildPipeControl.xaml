@@ -11,7 +11,7 @@
              d:DesignHeight="500" d:DesignWidth="700" d:DataContext="{d:DesignInstance Type=viewmodel:BuildPipeViewModel}">
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
-                      Margin="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                      Padding="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid MaxWidth="600" HorizontalAlignment="Stretch" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
