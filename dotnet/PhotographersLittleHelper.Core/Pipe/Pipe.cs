@@ -29,5 +29,10 @@ namespace PhotographersLittleHelper.Core.Pipe
 
             return new() { Source = source };
         }
+
+        public async Task RunAsync()
+        {
+            await Source.WorkAsync().ConfigureAwait(false);
+        }
     }
 }

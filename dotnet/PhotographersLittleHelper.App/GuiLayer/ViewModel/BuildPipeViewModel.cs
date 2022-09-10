@@ -4,6 +4,7 @@ using NuniToolbox.Ui.Commands;
 using PhotographersLittleHelper.Core.Pipe;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
         public ICommand SelectSourceDirectoryCommand { get; init; }
 
         public ICommand SelectSinkDirectoryCommand { get; init; }
+
+        public ICommand RunPipeCommand { get; init; }
 
         public DirectorySource Source
         {
@@ -68,6 +71,7 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
             AddStepCommand = new DelegateCommand<Action>(AddStepHandler);
             SelectSourceDirectoryCommand = new DelegateCommand(SelectSourceDirectoryHandler);
             SelectSinkDirectoryCommand = new DelegateCommand(SelectSinkDirectoryHandler);
+            RunPipeCommand = new DelegateCommand(RunPipeHandler);
 
             m_source = new();
             m_sink = new();
@@ -122,5 +126,27 @@ namespace PhotographersLittleHelper.App.GuiLayer.ViewModel
         {
             m_steps.Add(new PhotoCompressionStep());
         };
+
+        private async void RunPipeHandler()
+        {
+            IsBusy = true;
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(m_source.Directory) && new DirectoryInfo(m_source.Directory).Exists
+                    && !string.IsNullOrWhiteSpace(m_sink.Directory) && new DirectoryInfo(m_sink.Directory).Exists)
+                {
+                    await Task.Run(async () =>
+                    {
+                        Pipe<PhotoData> pipe = Pipe<PhotoData>.Create(m_source, m_steps.ToList(), m_sink);
+                        await pipe.RunAsync().ConfigureAwait(false);
+                    }).ConfigureAwait(false);
+                }
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
     }
 }
