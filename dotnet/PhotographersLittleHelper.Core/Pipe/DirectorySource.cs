@@ -47,7 +47,7 @@ namespace PhotographersLittleHelper.Core.Pipe
             {
                 List<FileInfo[]> lists = new() {
                     photoFiles.Take(photoFiles.Count / 2).ToArray(),
-                    photoFiles.Take(new Range(photoFiles.Count / 2, photoFiles.Count - 1)).ToArray()
+                    photoFiles.Skip(photoFiles.Count / 2).ToArray()
                 };
 
                 var tasks = lists
