@@ -7,7 +7,7 @@
                     xmlns:mde="https://spiegelp.github.io/MaterialDesignExtensions/winfx/xaml"
                     xmlns:local="clr-namespace:PhotographersLittleHelper.App.GuiLayer"
                     mc:Ignorable="d"
-                    Title="Photographer's Little Helper" Height="500" Width="700">
+                    Title="Photographer's Little Helper" Height="800" Width="700" Background="{DynamicResource MaterialDesignBackground}">
     <Grid>
         <md:DialogHost Identifier="mainWindowDialogHost">
             <Grid>
